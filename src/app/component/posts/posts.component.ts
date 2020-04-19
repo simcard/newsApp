@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { NewsService } from 'src/common/services/news.service';
+import { NewsService } from '../../../common/services/news.service';
 import { BaseComponent } from '../base/base.component';
-import { Article } from 'src/app/model/article';
+import { Article } from '../../../app/model/article';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { DatePipe } from '@angular/common';
 import { MatInput } from '@angular/material/input';
