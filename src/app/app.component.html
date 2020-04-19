@@ -10,7 +10,7 @@
       <mat-list class="list-nav">
           <mat-list-item class="list-item" *ngFor="let source of sources" (click)="searchArticlesBySourceId(source.id);sidenav.close();">
     
-            <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ source.id +'.png)'}" class="example-header-image"></div>
+            <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ source.id +'.png)'}" class="header-image"></div>
     
             <span class="source-name"> {{source.name}}</span>
     

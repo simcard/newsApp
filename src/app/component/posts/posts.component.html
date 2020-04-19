@@ -13,7 +13,7 @@
 </form>
   <mat-card class="card"  *ngFor="let article of articles">
     <mat-card-header>
-      <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="header-image"></div>
+      <div mat-card-avatar [ngStyle]="{'background-image': article.source.id !== null ? 'url(../assets/images/'+ article.source.id +'.png)' : '' }" class="header-image"></div>
       <mat-card-title class="title">{{article.title}}</mat-card-title>
       <mat-card-subtitle>{{article.source.name}}</mat-card-subtitle>
       <mat-card-subtitle>{{article.publishedAt | date:'longDate'}}</mat-card-subtitle>
