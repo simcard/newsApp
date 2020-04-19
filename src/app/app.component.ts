@@ -14,8 +14,7 @@ export class AppComponent extends BaseComponent implements OnInit {
   title = 'news-app';
   sources: Array<Source>;
   articles: Array<Article>;
-  resetForm: boolean;
-
+  
   constructor(private newsApiService: NewsService) {
     super();
   }
@@ -33,8 +32,6 @@ export class AppComponent extends BaseComponent implements OnInit {
   }
 
   searchArticlesBySourceId(source){
-    this.newsApiService.getArticlesBySourceId(source).subscribe(data => this.articles = data['articles']);
-    this.resetForm = true;
-
+    this.serviceSubscription.push(this.newsApiService.getArticlesBySourceId(source).subscribe(data => this.articles = data['articles']));
   }
 }
