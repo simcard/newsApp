@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsService } from '../common/services/news.service';
-import { BaseComponent } from './component/base/base.component';
-import { Source } from './model/source';
-import { Article } from './model/article';
 
 @Component({
   selector: 'app-root',
@@ -10,28 +6,10 @@ import { Article } from './model/article';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent extends BaseComponent implements OnInit {
+export class AppComponent  implements OnInit {
   title = 'news-app';
-  sources: Array<Source>;
-  articles: Array<Article>;
-  
-  constructor(private newsApiService: NewsService) {
-    super();
-  }
 
-  ngOnInit(){
-    this.subcribeToNewsSource();
-  }
+  constructor() {}
 
-  subcribeToNewsSource(){
-    this.serviceSubscription.push(this.newsApiService.getSources()
-    .subscribe(data => {
-      this.sources = data['sources'];
-    }
-    ));
-  }
-
-  searchArticlesBySourceId(source){
-    this.serviceSubscription.push(this.newsApiService.getArticlesBySourceId(source).subscribe(data => this.articles = data['articles']));
-  }
+  ngOnInit(){ }
 }
